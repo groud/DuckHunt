@@ -1,4 +1,5 @@
 # A basic Duck Hunt game
+![Screeshot](https://raw.githubusercontent.com/groud/DuckHunt/master/screenshot.png "Screenshot")
 
 ## Assets
 
