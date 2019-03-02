@@ -1,0 +1,218 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Stall/bg_wood.png" type="Texture" id=1]
+[ext_resource path="res://Stall/tree_oak.png" type="Texture" id=2]
+[ext_resource path="res://Stall/tree_pine.png" type="Texture" id=3]
+[ext_resource path="res://Stall/grass1.png" type="Texture" id=4]
+[ext_resource path="res://Stall/grass2.png" type="Texture" id=5]
+[ext_resource path="res://Target.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Stall/water2.png" type="Texture" id=7]
+[ext_resource path="res://Stall/cloud1.png" type="Texture" id=8]
+[ext_resource path="res://Stall/cloud2.png" type="Texture" id=9]
+[ext_resource path="res://Stall/curtain_top.png" type="Texture" id=10]
+[ext_resource path="res://Stall/curtain_straight.png" type="Texture" id=11]
+[ext_resource path="res://Stall/curtain.png" type="Texture" id=12]
+[ext_resource path="res://Stall/curtain_rope.png" type="Texture" id=13]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=14]
+
+[node name="Level" type="Node"]
+
+[node name="BackGround" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+
+[node name="trees" type="Node2D" parent="."]
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="tree_oak" type="Sprite" parent="trees"]
+position = Vector2( 796.988, 277.253 )
+rotation = 0.126135
+texture = ExtResource( 2 )
+
+[node name="tree_pine" type="Sprite" parent="trees"]
+position = Vector2( 200, 264 )
+texture = ExtResource( 3 )
+
+[node name="Grass" type="Control" parent="."]
+editor/display_folded = true
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 29.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="grass1" type="Sprite" parent="Grass"]
+position = Vector2( 132, -62.142 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -200 )
+
+[node name="grass6" type="Sprite" parent="Grass"]
+position = Vector2( 660, -62.142 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -200 )
+
+[node name="grass7" type="Sprite" parent="Grass"]
+position = Vector2( 924, -62.142 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -200 )
+
+[node name="grass3" type="Sprite" parent="Grass"]
+position = Vector2( 264, -62.142 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -200 )
+
+[node name="grass2" type="Sprite" parent="Grass"]
+position = Vector2( 0, -62.142 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -216 )
+
+[node name="grass8" type="Sprite" parent="Grass"]
+position = Vector2( 792, -62.142 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -216 )
+
+[node name="grass4" type="Sprite" parent="Grass"]
+position = Vector2( 396, -62.142 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -216 )
+
+[node name="grass5" type="Sprite" parent="Grass"]
+position = Vector2( 528, -62.142 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -216 )
+
+[node name="Target" parent="." instance=ExtResource( 6 )]
+position = Vector2( 349.841, 288.41 )
+
+[node name="Target3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 961.519, 348.799 )
+
+[node name="Target2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 756.977, 333.215 )
+
+[node name="Water" type="Control" parent="."]
+editor/display_folded = true
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Water1" type="TextureRect" parent="Water"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -204.0
+margin_right = 132.0
+margin_bottom = 19.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="Water3" type="TextureRect" parent="Water"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -142.0
+margin_right = 52.0
+margin_bottom = 81.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="Clouds" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 697, 122 )
+
+[node name="cloud1" type="Sprite" parent="Clouds"]
+position = Vector2( -374.259, 0 )
+texture = ExtResource( 8 )
+
+[node name="cloud2" type="Sprite" parent="Clouds"]
+position = Vector2( -37, 0 )
+texture = ExtResource( 9 )
+
+[node name="Curtains" type="Control" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="curtain_top" type="Sprite" parent="Curtains"]
+position = Vector2( 140, 40 )
+texture = ExtResource( 10 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 63 )
+
+[node name="curtain_top2" type="Sprite" parent="Curtains"]
+position = Vector2( 322.741, 46.858 )
+texture = ExtResource( 10 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 63 )
+
+[node name="curtain_top3" type="Sprite" parent="Curtains"]
+position = Vector2( 510, 46.858 )
+texture = ExtResource( 10 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 63 )
+
+[node name="curtain_top4" type="Sprite" parent="Curtains"]
+position = Vector2( 700, 40 )
+texture = ExtResource( 10 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 63 )
+
+[node name="Curtain_middle" type="TextureRect" parent="Curtains"]
+anchor_right = 1.0
+margin_left = 120.0
+margin_top = -9.0
+margin_bottom = 71.0
+texture = ExtResource( 11 )
+stretch_mode = 2
+
+[node name="curtain" type="Sprite" parent="Curtains"]
+editor/display_folded = true
+position = Vector2( -10, -10 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="curtain_rope" type="Sprite" parent="Curtains/curtain"]
+position = Vector2( 7.50755, 213.905 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 13 )
+
+[node name="curtain2" type="Sprite" parent="Curtains"]
+editor/display_folded = true
+position = Vector2( 1030, -10 )
+rotation = -3.14159
+scale = Vector2( 1.5, -1.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="curtain_rope2" type="Sprite" parent="Curtains/curtain2"]
+position = Vector2( 2.66669, 213.905 )
+rotation = -3.14159
+scale = Vector2( 0.666667, -0.666667 )
+texture = ExtResource( 13 )
+
+[node name="Player" parent="." instance=ExtResource( 14 )]
+

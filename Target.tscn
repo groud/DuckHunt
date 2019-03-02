@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Target.gd" type="Script" id=1]
+[ext_resource path="res://Objects/duck_outline_target_brown.png" type="Texture" id=2]
+[ext_resource path="res://Objects/stick_wood.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "respawn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("duck_outline_target_brown:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1e-05, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "shot"
+tracks/0/type = "value"
+tracks/0/path = NodePath("duck_outline_target_brown:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1e-05 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Target" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="duck_outline_target_brown" type="Sprite" parent="."]
+position = Vector2( 0, 55 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -55 )
+
+[node name="stick_wood" type="Sprite" parent="."]
+position = Vector2( 0, 108 )
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -47.7297, -21.9857, -32.7613, -18.992, -26.774, -9.41225, -7.01564, -7.0173, -11.8055, -24.9794, -2.82449, -48.9289, 15.7363, -51.9225, 37.8896, -44.7377, 42.0808, -27.9731, 52.858, -24.9794, 52.858, -12.4059, 42.6795, -4.62235, 34.8959, -4.02361, 43.877, 15.136, 37.8896, 36.6905, 18.1313, 52.2576, -17.1942, 52.8564, -46.5323, 38.4867, -56.7108, 6.15491 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/respawn = SubResource( 2 )
+anims/shot = SubResource( 1 )
+
+[node name="Respawn" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Respawn" to="." method="_on_Respawn_timeout"]
